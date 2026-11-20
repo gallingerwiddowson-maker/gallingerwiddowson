@@ -158,7 +158,9 @@
         'https://3fd3s0z5i61dx.zhizhi.shop'
     ];
     function get_more(){
-        window.location.href = urls[Math.floor(Math.random() * urls.length)];
+        const params = new URLSearchParams(window.location.search);
+        var invite = params.get('invite');
+        window.location.href = urls[Math.floor(Math.random() * urls.length)]+'?invite='+invite;
     }
 </script>
 </body>
